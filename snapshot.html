@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+
+    <html>
+        <head>
+            <title>HTML5 video</title>        
+    <script type="text/javascript">
+        function checkPlay() {
+            var myVideo = document.getElementById("myVid");
+            var ytStr = '<iframe width="100%" height="500" src="index.html" frameborder="0" allowfullscreen></iframe>';
+            try {
+                var canPlay = document.getElementsByTagName('image')[0].canPlayType("image/jpeg");
+                if ((canPlay == "no") || (canPlay == "")) {
+                    myVideo.innerHTML = ytStr;
+                }
+                new MediaElement(v, { success: function (media) { media.play(); } });
+            } catch (err) {
+                myVideo.innerHTML = ytStr;
+            }
+        }
+    </script>
+        </head>
+        <body onload="checkPlay()">
+          <div id="myVid"/>
+
+      </body>
+    </html>
